@@ -1,0 +1,1 @@
+INSERT INTO watchlist(task, date, done) VALUES('home alone','2020',false)

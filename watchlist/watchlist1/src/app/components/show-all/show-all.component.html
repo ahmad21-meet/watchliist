@@ -1,0 +1,56 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">num</th>
+            <th scope="col">movie-main</th>
+            <th scope="col">date</th>
+            <th scope="col">done</th>
+            <th scope="col">Delete</th>
+            <th scope="col">update</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let watchlist of listOfwatchlist">
+
+            <th scope="row">{{watchlist.id}}</th>
+            <td>{{watchlist.task}}</td>
+            <td>{{watchlist.date}}</td>
+            <td>{{watchlist.done}}</td>
+            <td><button type="button" class="btn  btn-danger" (click)="delete(watchlist.id)" onclick="window.location.reload();"> Delete</button></td>
+            <td><button type="button" class="btn  btn-warning" [routerLink]="['/update', watchlist.id]"> update</button></td>
+
+        </tr>
+
+    </tbody>
+</table>
+<button (click)="showAddwatclist()">Add  the movie to watchlist</button>
+<div *ngIf="show">
+    <form [formGroup]="watchlistForm" (ngSubmit)="handelSubmit()">
+
+        <label>
+    Movie-Name
+        <input type="text" formControlName="task">
+    </label>
+        <br>
+
+
+        <label>
+        Date
+        <input type="date" formControlName="date">
+    </label>
+        <br>
+
+
+        <label>
+        done
+        <input type="checkbox" formControlName="done">
+    </label>
+        <br>
+
+        <input type="submit" value="Add this movie to watchlist">
+
+    </form>
+    <button onclick="window.location.reload();"> Reload page</button>
+
+</div>

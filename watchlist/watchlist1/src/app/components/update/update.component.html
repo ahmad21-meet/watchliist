@@ -1,0 +1,51 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">movie-name</th>
+            <th scope="col">Date</th>
+            <th scope="col">Done?</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">{{watchlistToBeUpdated.id}}</th>
+            <td> {{watchlistToBeUpdated.task}} </td>
+            <td>{{watchlistToBeUpdated.date|date}}</td>
+            <td>{{watchlistToBeUpdated.done}} </td>
+        </tr>
+
+    </tbody>
+</table>
+
+
+<button type="button" class="btn btn-info" (click)="update()">Click to update</button>
+
+<form *ngIf="show" [formGroup]="updatedForm" (ngSubmit)="handelSubmitUpdate()">
+    <h2>Update: </h2>
+    <label>
+        Movie-name
+        <input type="text" formControlName="task">
+      </label>
+    <br>
+
+    <label>
+       Date
+    <input type="date" formControlName="date">
+    </label>
+
+    <br>
+
+    <label>
+        Done
+        <input type="checkbox" formControlName="done">
+      </label>
+
+
+    <input type="submit" value="Submit the updates" onClick="window.location.reload();">
+
+</form>
+
+<br>
+<br>
+<button type="button" class="btn btn-primary" [routerLink]="['/watchlist']">Go Back To Homepage</button>
