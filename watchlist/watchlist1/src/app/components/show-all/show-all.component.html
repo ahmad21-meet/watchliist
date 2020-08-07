@@ -1,56 +1,121 @@
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">num</th>
-            <th scope="col">movie-main</th>
-            <th scope="col">date</th>
-            <th scope="col">done</th>
-            <th scope="col">Delete</th>
-            <th scope="col">update</th>
+<html>
 
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let watchlist of listOfwatchlist">
 
-            <th scope="row">{{watchlist.id}}</th>
-            <td>{{watchlist.task}}</td>
-            <td>{{watchlist.date}}</td>
-            <td>{{watchlist.done}}</td>
-            <td><button type="button" class="btn  btn-danger" (click)="delete(watchlist.id)" onclick="window.location.reload();"> Delete</button></td>
-            <td><button type="button" class="btn  btn-warning" [routerLink]="['/update', watchlist.id]"> update</button></td>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
 
-        </tr>
+</head>
 
-    </tbody>
-</table>
-<button (click)="showAddwatclist()">Add  the movie to watchlist</button>
-<div *ngIf="show">
-    <form [formGroup]="watchlistForm" (ngSubmit)="handelSubmit()">
+<div class="the-nafadak">
 
-        <label>
+    <body>
+
+
+
+        <nav class="navbar navbar-expand-lg navbar-light  navbar navbar-light " style="background-color: #141a2c;    ">
+            <a class="navbar-brand" href="#">
+                <img src="assets\images\logo1.png" width="107" height="39" class="d-inline-block align-top" alt="" loading="lazy"> </a>
+            <a class="navbar-brand text-white " href="#"></a>
+            <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon  "></span>
+        </button>
+            <div class="d-flex flex-row-reverse bd-highlight">
+
+                <div class="collapse navbar-collapse  " id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto  ">
+                        <li class="nav-item active">
+                            <a class="nav-link text-white" href="#">Home  Page<span class="sr-only">(current)</span></a>
+                        </li>
+
+
+
+                    </ul>
+                </div>
+
+
+            </div>
+        </nav>
+
+
+        <div class="parent">
+            <table class="blueTable" class="table  " style="background-color: #dd003f">
+                <thead>
+                    <tr>
+                        <th scope="col">num</th>
+                        <th scope="col">movie-Name</th>
+                        <th scope="col">date</th>
+                        <th scope="col">done</th>
+                        <th scope="col">Delete</th>
+                        <th scope="col">update</th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let watchlist of listOfwatchlist">
+
+                        <th scope="row">{{watchlist.id}}</th>
+                        <td>{{watchlist.task}}</td>
+                        <td>{{watchlist.date}}</td>
+                        <td>{{watchlist.done}}</td>
+                        <td><button type="button" class="btn  btn-danger" (click)="delete(watchlist.id)" onclick="window.location.reload();"> Delete</button></td>
+                        <td><button type="button" class="btn  btn-warning" [routerLink]="['/update', watchlist.id]"> update</button></td>
+
+                    </tr>
+
+                    <tbody>
+            </table>
+        </div>
+
+
+
+        <button (click)="showAddwatclist()" class="add">Add  the movie to watchlist</button>
+
+        <div *ngIf="show" class="stylelable text-light">
+            <form [formGroup]="watchlistForm" (ngSubmit)="handelSubmit()">
+
+                <label>
+           
     Movie-Name
         <input type="text" formControlName="task">
     </label>
-        <br>
+                <br>
 
 
-        <label>
+                <label>
         Date
         <input type="date" formControlName="date">
     </label>
-        <br>
+                <br>
 
 
-        <label>
+                <label>
         done
         <input type="checkbox" formControlName="done">
     </label>
-        <br>
+                <br>
 
-        <input type="submit" value="Add this movie to watchlist">
+                <input type="submit" value="Add this movie to watchlist">
 
-    </form>
-    <button onclick="window.location.reload();"> Reload page</button>
+            </form>
+            <button onclick="window.location.reload();"> Reload page</button>
+        </div>
+
+
+
+
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" crossorigin="anonymous"></script>
+
+
+    </body>
+    <footer>
+
+    </footer>
 
 </div>
+
+
+</html>

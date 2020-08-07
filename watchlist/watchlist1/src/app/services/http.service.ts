@@ -33,5 +33,6 @@ export class HttpService {
   public update( id:number, watchlist: watchlist){
     return this.http.put<watchlist>(this.url+ 'update/'+id,watchlist);
   }
+  
 
 }

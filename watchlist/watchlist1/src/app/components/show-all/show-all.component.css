@@ -1,0 +1,61 @@
+.the-nafadak {
+    background-image: url('../../../assets/images/error-bg.jpg');
+    background-size: 100%;
+}
+
+table.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    text-align: center;
+}
+
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+}
+
+.sec {
+    background-image: url(src\assets\images\error-bg.jpg);
+}
+
+th,
+td {
+    border: 16px blue;
+}
+
+.stylelable {
+    font-size: medium;
+    size: 23px;
+}
+
+table {
+    position: relative;
+    top: 100px;
+}
+
+.add {
+    position: relative;
+    margin-top: 150px;
+}
+
+table {
+    width: 80%;
+}
+
+td,
+th {
+    height: 100%;
+}
+
+tbody {
+    font-size: auto;
+}
+
+td {
+    padding: 11px;
+}

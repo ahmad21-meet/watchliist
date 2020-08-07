@@ -68,7 +68,7 @@ public class WatchlistController {
 		
 		
 	}
-	@GetMapping("/findbyid/{id}")
+	@GetMapping("/findById/{id}")
 	public ResponseEntity<?> findById(@PathVariable Integer id){
 		if(this.watchlistRepository.findById(id).isPresent()) {
 			return new ResponseEntity<>(this.watchlistRepository.findById(id),HttpStatus.OK);
@@ -78,6 +78,7 @@ public class WatchlistController {
 
 			
 		}
+		
 
 		
 	}
